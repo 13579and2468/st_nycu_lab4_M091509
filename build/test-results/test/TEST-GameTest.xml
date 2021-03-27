@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="GameTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-03-27T05:55:34" hostname="MSI" time="0.037">
+  <properties/>
+  <testcase name="invalid_player_cases()" classname="GameTest" time="0.037"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
