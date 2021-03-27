@@ -56,7 +56,7 @@ class GameTest {
     void all_win_cases(String choice1,String choice2) {
         game.player_input(0,choice1);
         game.player_input(1,choice2);
-        assertEquals(game.who_win(),"Player 2 win!");
+        assertEquals(game.who_win(),"Player 1 win!");
     }
 
     @ParameterizedTest(name = "#{index} Test with Argument={0},{1}")
