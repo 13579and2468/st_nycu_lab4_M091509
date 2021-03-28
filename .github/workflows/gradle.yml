@@ -28,7 +28,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build/ # or path/to/artifact
+        path: ./build # or path/to/artifact
       
   Test:
     needs: Compile
@@ -52,12 +52,12 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build/ # or path/to/artifact
+        path: ./build # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
         name: testReport
-        path: ./build/reports/ # or path/to/artifact
+        path: ./build/reports # or path/to/artifact
         
   Assemble:
     needs: Test
@@ -81,7 +81,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build/ # or path/to/artifact
+        path: ./build # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
