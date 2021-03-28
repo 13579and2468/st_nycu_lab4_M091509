@@ -28,7 +28,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build # or path/to/artifact
+        path: ./build/* # or path/to/artifact
         
     - name: Display structure of downloaded files
       run: ls -R
@@ -62,7 +62,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build # or path/to/artifact
+        path: ./build/* # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
@@ -95,7 +95,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: build_dir
-        path: ./build # or path/to/artifact
+        path: ./build/* # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
