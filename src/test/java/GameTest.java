@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class GameTest {
 
-    Game game;
+    Game game;//
 
     @BeforeEach
     void setUp() {
