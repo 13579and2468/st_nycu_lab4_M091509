@@ -61,7 +61,7 @@ jobs:
           ${{ runner.os }}-gradle-
 
     - name: Cache flow object
-      ses: actions/cache@v2
+      uses: actions/cache@v2
       with:
         path: |
           ./*
