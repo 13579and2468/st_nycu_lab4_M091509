@@ -24,10 +24,10 @@ jobs:
     - name: Cache multiple paths
       uses: actions/cache@v2
       with:
-        path: ./*  #use for  compileJava->test->assemble
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
+        path: |
+          ./**/*  #use for  compileJava->test->assemble
+          ~/.gradle/caches
+          ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
@@ -48,10 +48,10 @@ jobs:
     - name: Cache multiple paths
       uses: actions/cache@v2
       with:
-        path: ./*  #use for  compileJava->test->assemble
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
+        path: |
+          ./**/*  #use for  compileJava->test->assemble
+          ~/.gradle/caches
+          ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
@@ -81,10 +81,10 @@ jobs:
     - name: Cache multiple paths
       uses: actions/cache@v2
       with:
-        path: ./*  #use for  compileJava->test->assemble
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
+        path: |
+          ./**/*  #use for  compileJava->test->assemble
+          ~/.gradle/caches
+          ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
