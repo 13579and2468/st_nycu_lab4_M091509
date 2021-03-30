@@ -21,10 +21,12 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew compileJava
       
-    - uses: actions/upload-artifact@v2
+    - name: Cache multiple paths
+      uses: actions/cache@v2
       with:
-        name: build_dir
-        path: ./build/* # or path/to/artifact
+        path: |
+          ./build/*
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
         
     - name: Display structure of downloaded files
       run: ls -R
@@ -39,10 +41,12 @@ jobs:
     - name: Display structure of downloaded files
       run: ls -R
       
-    - uses: actions/download-artifact@v2
+    - name: Cache multiple paths
+      uses: actions/cache@v2
       with:
-        name: build_dir
-        path: ./build
+        path: |
+          ./build/*
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
           
     - name: Display structure of downloaded files
       run: ls -R
@@ -54,11 +58,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew test
-      
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build_dir
-        path: ./build/* # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
@@ -71,10 +70,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/download-artifact@v2
+    - name: Cache multiple paths
+      uses: actions/cache@v2
       with:
-        name: build_dir
-        path: ./build
+        path: |
+          ./build/*
+          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
         
     - name: Display structure of downloaded files
       run: ls -R
@@ -87,11 +88,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew assemble
-      
-    - uses: actions/upload-artifact@v2
-      with:
-        name: build_dir
-        path: ./build/* # or path/to/artifact
         
     - uses: actions/upload-artifact@v2
       with:
@@ -109,5 +105,7 @@ jobs:
         name: buildJar
     - name: Release
       uses: softprops/action-gh-release@v1
+      with:
+          files: lab4-1.0-SNAPSHOT.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
