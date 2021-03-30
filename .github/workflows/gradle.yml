@@ -25,12 +25,17 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          ./**/*  #use for  compileJava->test->assemble
           ~/.gradle/caches
           ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+    - name: Cache flow object
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./*
+          key: dependency
         
     - name: Display structure of downloaded files
       run: ls -R
@@ -49,12 +54,18 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          ./**/*  #use for  compileJava->test->assemble
           ~/.gradle/caches
           ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+
+    - name: Cache flow object
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./*
+          key: dependency
           
     - name: Display structure of downloaded files
       run: ls -R
@@ -78,16 +89,22 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Cache multiple paths
+    - name: Cache dependency
       uses: actions/cache@v2
       with:
         path: |
-          ./**/*  #use for  compileJava->test->assemble
           ~/.gradle/caches
           ~/.gradle/wrapper
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
         restore-keys: |
           ${{ runner.os }}-gradle-
+
+    - name: Cache flow object
+        uses: actions/cache@v2
+        with:
+          path: |
+            ./*
+          key: dependency
         
     - name: Display structure of downloaded files
       run: ls -R
