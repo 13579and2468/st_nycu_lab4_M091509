@@ -106,6 +106,6 @@ jobs:
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-          files: lab4-1.0-SNAPSHOT.jar
+          files: ./build/libs/*.jar
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
