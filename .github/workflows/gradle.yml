@@ -26,7 +26,7 @@ jobs:
       with:
         path: |
           ./build/*
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
         
     - name: Display structure of downloaded files
       run: ls -R
@@ -46,7 +46,7 @@ jobs:
       with:
         path: |
           ./build/*
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
           
     - name: Display structure of downloaded files
       run: ls -R
@@ -75,7 +75,7 @@ jobs:
       with:
         path: |
           ./build/*
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
         
     - name: Display structure of downloaded files
       run: ls -R
