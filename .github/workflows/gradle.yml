@@ -61,11 +61,11 @@ jobs:
           ${{ runner.os }}-gradle-
 
     - name: Cache flow object
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./*
-          key: dependency
+      ses: actions/cache@v2
+      with:
+        path: |
+          ./*
+        key: dependency
           
     - name: Display structure of downloaded files
       run: ls -R
@@ -100,11 +100,11 @@ jobs:
           ${{ runner.os }}-gradle-
 
     - name: Cache flow object
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./*
-          key: dependency
+      uses: actions/cache@v2
+      with:
+        path: |
+          ./*
+        key: dependency
         
     - name: Display structure of downloaded files
       run: ls -R
